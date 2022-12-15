@@ -123,7 +123,8 @@ app.get('/Inscription', async (request, response) => {
         styles: ['/css/Inscription.css'],
         scripts: ['/js/InscriptionCompte.js'],
         //ici je vais dire que mon utilisateur existe et je vais initialiser la variable utilisateur
-        user: request.user
+        user: request.user,
+        accept: request.session.accept
     })
 })
 
@@ -184,7 +185,9 @@ app.get('/Connexion', async (request, response) => {
         styles: ['/css/Connexion.css'],
         scripts: ['/js/ConnexionCompte.js'],
         //ici je vais dire que mon utilisateur existe et je vais initialiser la variable utilisateur
-        user: request.user
+        user: request.user,
+        // accept permet d'enboyer l'acceptation et creer la session 
+        accept: request.session.accept
     })
 })
 
