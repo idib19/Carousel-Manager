@@ -1,0 +1,65 @@
+<!--Page général regroupant les caractéristiques html , js et css de tous les handlebars-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HerculeLand</title>
+
+    <!--C`est ce qui va permettre de accéder au css-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!--Boucle de tous les styles disponibles-->
+    {{#each styles}}
+    <link rel="stylesheet" href="{{this}}">
+    {{/each}}
+
+    <!--On va executer le script js nommé accept-cookie.js afin de l`inclure dans la main qui regroupe toutes les handlebars-->
+    <script type="module" src="./js/accept-cookie.js"></script>
+
+    <!--Boucle de tous les scripts disponibles-->
+    {{#each scripts}}
+    <script type="module" src="{{this}}"></script>
+    {{/each}}
+
+    <!--Implémenter les styles d`écritures de google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <!--Accès à la partie de code sur le header.handlebars dans le dossier partial à partir de ce fichier main.handlebars-->
+    {{>header}}
+
+    <!-- Message d'avertissement du cookie-->
+    {{#unless accept}}
+    <div id="message_cookie">
+        En navigant sur ce site web , vous acceptez les cookies
+        <input type="button" value="Accepter" id="btn_cookie">
+    </div>
+    {{/unless}}
+
+    <!--C`est la balise main qui va contenir le contenu principal de tous nos pages-->
+    <main>
+
+        <!--Gabarit qui va contenir tous les parties d`html (handlebars)-->
+        {{{body}}}
+
+    </main>
+
+    <!-- Acces au footer de la page dans le partials-->
+    {{>footer}}
+
+</body>
+
+</html>

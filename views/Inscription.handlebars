@@ -1,0 +1,51 @@
+<!--Page Inscription-->
+
+
+<main>
+
+
+    <div class="formulairediv">
+
+        <form id="formulaire" novalidate>
+
+            <!--C`est le titre de notre formulaire-->
+            <h2>FORMULAIRE D'INSCRIPTION UTILISATEUR</h2>
+
+            <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+            <label>
+                NOM:
+                <input type="text" id="nom_utilisateur" required>
+                <div id="error_nom_utilisateur" class="error"></div>
+            </label>
+
+            <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+            <label>
+                PRENOM:
+                <input type="text" id="prenom_utilisateur" required>
+                <div id="error_prenom_utilisateur" class="error"></div>
+            </label>
+
+            <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+            <label>
+                MOT DE PASSE:
+                <input type="password" id="mot_de_passe" required>
+                <div id="error_mot_de_passe" class="error"></div>
+            </label>
+
+            <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+            <label>
+                COURRIEL:
+                <input type="email" id="courriel_utilisateur" max="50" min="4" required>
+                <div id="error_courriel" class="error"></div>
+            </label>
+
+            <!--C`est le bouton qui va permettre de envoyer le contenu des saisies faites précedemment jusqu`au serveur et à la base de donnée-->
+            <input type="submit" id="confirmationInscription" value="Confirmer Inscription">
+
+            <!--Si il ya un même courriel utilisé alors apparaitre cette erreur-->
+            <div id="error_copy" class="error"></div>
+        </form>
+
+    </div>
+
+</main>

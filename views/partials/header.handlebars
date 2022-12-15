@@ -1,0 +1,32 @@
+<!--Entête de notre page-->
+<header class="entete">
+
+  <!--Titre de notre site web-->
+  <h1>HerculeLand</h1>
+
+  <!--Lien vers nos autres pages-->
+  <nav id="liens">
+    <!--Si l`utilisateur existe(si il est connecté) alors-->
+    {{#if user}}
+    <a href="/">Accueil</a>
+    <a href="/PactiviteInscrites">Mes activités</a>
+    {{/if}}
+    <!--Si l`utilisateur est un admin alors affiché la page administration-->
+    {{#if EstAdmin}}
+    <a href="/Padmin">Administration</a>
+    {{/if}}
+    <!--Si l`utilisateur n`existe pas(si il n`est pas connecté) alors affiché le lien connexion et inscription,sinon les caché -->
+    {{#unless user}}
+    <a href="/Connexion">Connexion</a>
+    <a href="/Inscription">Inscription</a>
+    {{/unless}}
+    <!--Si l`utilisateur existe(si il est connecté) alors affiché le bouton deconnexion-->
+    {{#if user}}
+    <form method="POST" action="/deconnexion">
+      <input type="submit" value="Déconnexion">
+    </form>
+    {{/if}}
+
+  </nav>
+
+</header>

@@ -1,0 +1,117 @@
+<!--Page admin-->
+<div class="divimage">
+    <img src="./css/admin1.jpg" alt="adminimage">
+</div>
+
+<!--C`est le titre de notre page-->
+<div class="titresemplacement">
+    <h1>Administration</h1>
+</div>
+
+
+<div id="arriereplandeliste">
+    <!--Liste de maneges-->
+    <ul id="listemaneges">
+        <!--Foreach version html qui va boucler chaque manege dans la liste de maneges-->
+        {{#each maneges}}
+
+        <!--Ici on va identifier le li afin de le supprimer plus tard en temps réel dans la surface client-->
+        <li class="manegeli" data-id_manege="{{this.id_manege}}">
+
+            <!--C`est le div de qui contient les informations de notre manège ainsi que le bouton supprimer avec son attribut id manege créé par le client (dataset)-->
+            <div class="manegediv">
+                <div class="manegeid">{{this.id_manege}}</div>
+                <div class="manegenom">
+                    {{this.nom}}
+                </div>
+                <div class="manegedate_debut">
+                    Date debut:{{this.date_debut}}
+                </div>
+                <div class="manegenb_tours">
+                    Nombre tours:{{this.nb_tours}}
+                </div>
+                <div class="manegecapacite">
+                    Capacité:{{this.capacite}}
+                </div>
+                <div class="manegedescription">
+                    {{this.description}}
+                </div>
+
+                <div class="DivBtn">
+                    <input type="submit" value="Supprimer" class="boutonsupprimerclasse"
+                        data-id_manege="{{this.id_manege}}"></input>
+                </div>
+
+                <!--Ici c notre liste d`utilisateurs dans chaque manege avec leurs courriel et leurs id_utilisateurs-->
+                <ul class="listeutilisateurs">
+                    {{#each this.listeutilisateurs}}
+                    <li class="liutilisateur">
+                        <div>{{this.courriel}}{{this.id_utilisateur}}</div>
+                    </li>
+                    {{/each}}
+                </ul>
+
+            </div>
+
+        </li>
+
+        {{/each}}
+    </ul>
+
+</div>
+
+
+<!--C`est le formulaire de creation de manege pour l'administrateur -->
+
+<!--novalidate ici va permettre de ne pas prendre en compte les validations par défault qui pourraient géné les validations programmés-->
+
+
+
+
+<div class="formulaire">
+    <form id="formulaireadmin" novalidate>
+
+        <!--C`est le titre de notre formulaire-->
+        <h2>FORMULAIRE DE CREATION DE MANEGES</h2>
+        <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+        <label>
+            NOM DU MANEGE:
+            <input type="text" id="nom_manege" name="nomduManege">
+            <div id="error_nom_manege" class="error"></div>
+        </label>
+
+        <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+        <label>
+            DESCRIPTION:
+            <input type="text" id="description_manege" name="descriptionManege">
+            <div id="error_description_manege" class="error"></div>
+        </label>
+
+        <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+        <label>
+            DATE DE DEBUT: (mm/jj/yy)
+            <input type="text" id="date_debut" name="dateDebut">
+            <div id="error_date_debut" class="error"></div>
+        </label>
+
+        <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+        <label>
+            CAPACITE:
+            <input type="number" id="capacite" name="capaciteManege" max="50" min="4">
+            <div id="error_capacite" class="error"></div>
+        </label>
+
+        <!--Cette élément à remplir va contenir une saisie et un div qui peut apparaitre en erreur text à partir des fonction de validations faites dans le coté client-->
+        <label>
+            NOMBRE DE TOURS:
+            <input type="number" id="nbr_tours" name="nombreDetours" max="5" min="1">
+            <div id="error_nbr_tours" class="error"></div>
+        </label>
+
+        <!--C`est le bouton qui va permettre de envoyer le contenu des saisies faites précedemment jusqu`au serveur et à la base de donnée-->
+        <input type="submit" id="btnConfirmer" value="CONFIRMER">
+
+
+    </form>
+
+</div>

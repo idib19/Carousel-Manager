@@ -1,0 +1,45 @@
+<!--Page activités inscrites de l`utilisateur-->
+
+<!--C`est le titre de notre page-->
+<div class="titresemplacement">
+  <h1>Mes activités</h1>
+</div>
+
+<div id="arriereplandeliste">
+  <!--Liste de maneges-->
+  <ul id="listemanegesinscrits">
+    <!--Foreach version html qui va boucler chaque manege dans la liste de maneges inscrits-->
+    {{#each manegesinscrits}}
+
+    <li class="manegeli" data-id_manege="{{this.id_manege}}">
+
+      <!--C`est le div de qui contient les informations de notre manège ainsi que le bouton inscrire avec son attribut id manege créé par le client (dataset)-->
+      <div class="manegediv">
+        <div class="manegenom">
+          {{this.nom}}
+        </div>
+        <div class="manegedate_debut">
+          <div class="titres"> Date debut:</div> {{this.date_debut}}
+        </div>
+        <div class="manegenb_tours">
+          <div class="titres"> Nombre tours:</div> {{this.nb_tours}}
+        </div>
+        <div class="manegecapacite">
+          <div class="titres"> Capacité:</div>{{this.capacite}}
+        </div>
+        <div class="manegedescription">
+          <div class="titres"> </div> {{this.description}}
+        </div>
+
+        <div class="DivBtn">
+          <input type="submit" value="Quitter activité" class="btnquitterclasse"
+            data-id_manege="{{this.id_manege}}"></input>
+        </div>
+      </div>
+
+    </li>
+
+    {{/each}}
+  </ul>
+
+</div>

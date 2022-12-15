@@ -1,0 +1,54 @@
+<!--Page accueil-->
+
+<!--Ici c pour afficher quelle utilisateur est affiché-->
+<div class="welcomeUtilisateur">
+  Bienvenue {{user.prenom}} {{user.nom}} !
+</div>
+
+<!--C`est le div qui va contenir l`image de la tour d`attraction-->
+<div class="divimage">
+  <img src="./css/tourattraction.jpg" alt="tourattractionrouge">
+</div>
+
+<!--C`est le titre de notre page-->
+<div class="titresemplacement">
+  <h1>Activités à proposer</h1>
+</div>
+
+<div id="arriereplandeliste">
+  <!--Liste de maneges-->
+  <ul id="listemaneges">
+    <!--Foreach version html qui va boucler chaque manege dans la liste de maneges-->
+    {{#each maneges}}
+
+    <li class="manegeli" data-id_manege="{{this.id_manege}}">
+
+      <!--C`est le div de qui contient les informations de notre manège ainsi que le bouton inscrire avec son attribut id manege créé par le client (dataset)-->
+      <div class="manegediv">
+        <div class="manegenom">
+          {{this.nom}}
+        </div>
+        <div class="manegedate_debut">
+          Date debut:{{this.date_debut}}
+        </div>
+        <div class="manegenb_tours">
+          Nombre tours:{{this.nb_tours}}
+        </div>
+        <div class="manegecapacite">
+          Capacité:{{this.capacite}}
+        </div>
+        <div class="manegedescription">
+          {{this.description}}
+        </div>
+
+        <div class="DivBtn">
+          <input type="submit" value="S`inscrire" class="btninscrireclasse" data-id_manege="{{this.id_manege}}"></input>
+        </div>
+
+      </div>
+
+    </li>
+
+    {{/each}}
+
+  </ul>

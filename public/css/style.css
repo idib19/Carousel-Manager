@@ -1,0 +1,281 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+}
+
+.titres {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 6rem;
+    color: rgb(215, 103, 38);
+    margin: 35px;
+}
+
+nav {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: rgb(215, 103, 38);
+    margin-right: 45px;
+    font-size: x-large;
+}
+
+.divimage {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 40rem;
+    width: 100rem;
+    border: 2px rgb(0, 0, 0) solid;
+    padding: 0;
+}
+
+#arriereplandeliste {
+    background-color: #a00;
+    display: flex;
+}
+
+.piedpage {
+    background-color: #a00;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+}
+
+.listeutilisateurs{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    width: 14.77rem;
+    font-size: 11px;
+    justify-content: center;
+    gap:5px;
+    border: 1rem cornflowerblue solid;
+}
+
+.liutilisateur{
+    list-style-type: none;
+    margin: 1rem;
+    border: rgb(127, 217, 255) 2px double;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color:rgb(150, 220, 253);
+}
+
+.liutilisateur:hover{
+    border: rgb(4, 0, 238) 2px double;
+    cursor: pointer;
+}
+
+.liutilisateur:active{
+    border: rgb(6, 3, 179) 4px solid;
+    font-weight: 800;
+}
+
+#divNomcompletListe{
+    color: blue;
+}
+
+#divIdManegeListe{
+color:red;
+}
+
+
+.piedpage p {
+    color: rgb(221, 154, 19);
+    margin: auto 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btninscrireclasse {
+    background-color: red;
+    height: 42px;
+    width: 236px;
+}
+
+.btninscrireclasse:active {
+    background-color: brown;
+}
+
+.btninscrireclasse:hover {
+    height: 50px;
+    width: 245px;
+    font-weight: 900;
+}
+
+.manegeli {
+    list-style-type: none;
+    width: 20rem;
+}
+
+.manegenom {
+    text-align: center;
+    padding: 0.2rem;
+    font-size: larger;
+    background-color: beige;
+    margin: .5rem;
+    width: 15rem;
+}
+
+.manegedate_debut {
+    display: inline-flex;
+}
+
+.manegenb_tours {
+    display: inline-flex;
+}
+
+.manegecapacite {
+    display: inline-flex;
+}
+
+.manegedescription {
+    background-color: antiquewhite;
+    border-style: dotted;
+    width: 15rem;
+    word-wrap: break-word;
+}
+
+
+
+#listemaneges {
+    margin: 0 auto;
+    margin: 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#listemanegesinscrits {
+    margin: 0 auto;
+    margin: 2rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.manegediv {
+    padding: 2rem;
+    border: 2px black solid;
+    height: 100%;
+    display: grid;
+    background-color: rgb(255, 255, 255);
+}
+
+.manegediv:hover {
+    border-style: groove;
+    border: 6px antiquewhite groove;
+}
+
+.boutonsupprimerclasse {
+    background-color:rgb(131, 243, 170);
+    height: 42px;
+    width: 236px;
+}
+
+.boutonsupprimerclasse:hover {
+    height: 50px;
+    width: 245px;
+    font-weight: 900;
+}
+
+.boutonsupprimerclasse:active {
+    background-color: rgb(23, 120, 26);
+}
+
+.btnquitterclasse {
+    background-color: rgb(72, 30, 222);
+    height: 42px;
+    width: 236px;
+}
+
+.btnquitterclasse:active {
+    background-color: rgb(13, 13, 153);
+}
+
+.btnquitterclasse:hover {
+    height: 50px;
+    width: 245px;
+    font-weight: 900;
+}
+
+.titresemplacement {
+    display: flex;
+    align-items: center;
+    gap: 20rem;
+}
+
+
+.DivBtn {
+    text-align: center;
+    display: grid;
+    margin-top: 1rem;
+    margin-bottom: auto;
+
+}
+
+#formulaireadmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgb(219, 219, 219);
+}
+
+#formulaireadmin label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 25rem;
+}
+
+.error {
+    display: none;
+    padding: .5rem;
+    color: #a00;
+}
+
+.titresemplacement {
+    background-color: #a00;
+}
+
+#message_cookie {
+    padding: 2rem;
+    background-color: rgb(221, 243, 62);
+    border: rgb(144, 144, 18) 2px solid;
+}
+
+#btnConfirmer{
+    margin-bottom: 1rem;
+}
+
+.welcomeUtilisateur{
+    padding: 2rem;
+    background-color:rgb(255, 88, 88);
+    border: rgb(93, 2, 2) 2px double;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

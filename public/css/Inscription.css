@@ -1,0 +1,47 @@
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+.formulairediv h2{
+    text-align: center;
+}
+
+.formulairediv{
+    display: flex;
+    justify-content: center;
+}
+
+#formulaire{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    background-color: beige;
+    border-radius: 15%;
+    border: 2px black solid;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#formulaire label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 25rem;
+}
+
+h2{
+    padding: 0 1rem;
+}
+
+#confirmationInscription{
+    margin: 1rem;
+}
