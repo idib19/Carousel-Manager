@@ -50,7 +50,7 @@ img {
 }
 
 #arriereplandeliste {
-    background-color: #a00;
+    background-color: rgb(255, 255, 255);
     display: flex;
 }
 
